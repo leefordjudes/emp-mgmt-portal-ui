@@ -1,3 +1,35 @@
+# Project Creation Steps
+
+ng new emp-mgmt-portal-ui --minimal=true --inlineStyle=false --inlineTemplate=false --routing=true --skipTests=true --style=css --strict=false
+
+npm i bootstrap jquery @popperjs/core bootstrap-icons moment lodash
+
+ng g c department
+ng g c department/show-dep
+ng g c department/add-edit-dep
+
+ng g c employee
+ng g c employee/show-emp
+ng g c employee/add-edit-emp
+
+ng g s shared/shared
+
+update following line in angular.json
+
+  "styles": [
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+    "src/styles.css"
+  ],
+  "scripts": [
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/@popperjs/core/dist/umd/popper.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+  ],
+  "allowedCommonJsDependencies": [
+    "lodash"
+  ]
+
 # EmpMgmtPortalUi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.

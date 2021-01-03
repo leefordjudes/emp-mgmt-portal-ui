@@ -1,0 +1,41 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+<div class="form-group row" style="width: 75%;">
+  <label class="col-sm-3 col-form-label">Name</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control" [(ngModel)]="empName" placeholder="Enter Employee Name">
+  </div>
+
+  <label class="col-sm-3 col-form-label">Department</label>
+  <div class="col-sm-9">
+    <select class="form-control" [(ngModel)]="deptId">
+      <option disabled value="0">--Select Department--</option>
+      <option *ngFor="let dep of departmentList" [value]="dep.id">{{dep.name}}</option>
+    </select>
+  </div>
+
+  <label for="doj" class="col-sm-3 col-form-label">Date of joining</label>
+  <div class="col-sm-9">
+      <!-- <input type="date" [(ngModel)]="doj"> -->
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="dd-MM-yyyy"
+                 name="doj" [(ngModel)]="doj" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><i class="bi bi-calendar3"></i></button>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+</div>
+
+<div class="ml-5 bd-highlight" style="width: 25%;">
+  <img [src]=photoFilePath height="250px" width="200px"/>
+  <input type="file" (change)="uploadPhoto($event)" class="mt-2">
+</div>
+
+</div>
+
+<button (click)="addEmp()" *ngIf="empId==null" class="btn btn-primary float-right">Add</button>
+<button (click)="updateEmp()" *ngIf="empId!=null" class="btn btn-primary float-right">Update</button>
