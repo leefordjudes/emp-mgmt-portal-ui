@@ -3,6 +3,7 @@
 ng new emp-mgmt-portal-ui --minimal=true --inlineStyle=false --inlineTemplate=false --routing=true --skipTests=true --style=css --strict=false
 
 npm i bootstrap jquery @popperjs/core bootstrap-icons moment lodash
+npm i ngx-toastr
 
 ng g c department
 ng g c department/show-dep
@@ -12,14 +13,21 @@ ng g c employee
 ng g c employee/show-emp
 ng g c employee/add-edit-emp
 
+ng g c payment-details
+ng g c payment-details/payment-detail-form
+
 ng g s shared/shared
+ng g s shared/payment-detail
+
+ng g class shared/payment-detail --type=model
 
 update following line in angular.json
 
   "styles": [
     "node_modules/bootstrap/dist/css/bootstrap.min.css",
     "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-    "src/styles.css"
+    "src/styles.css",
+    "node_modules/ngx-toastr/toastr.css"
   ],
   "scripts": [
     "node_modules/jquery/dist/jquery.min.js",
@@ -29,6 +37,8 @@ update following line in angular.json
   "allowedCommonJsDependencies": [
     "lodash"
   ]
+
+time: 1:27
 
 # EmpMgmtPortalUi
 
