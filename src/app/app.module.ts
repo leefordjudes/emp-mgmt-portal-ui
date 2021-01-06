@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +14,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ShowEmpComponent } from './employee/show-emp/show-emp.component';
 import { AddEditEmpComponent } from './employee/add-edit-emp/add-edit-emp.component';
 import { SharedService } from './shared/shared.service';
-import { NgbModule, NgbDatepickerConfig, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-import { NgbDateCustomParserFormatter } from './shared/NgbDateCustomParserFormatter';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { PaymentDetailFormComponent } from './payment-details/payment-detail-form/payment-detail-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +26,8 @@ import { NgbDateCustomParserFormatter } from './shared/NgbDateCustomParserFormat
     EmployeeComponent,
     ShowEmpComponent,
     AddEditEmpComponent,
+    PaymentDetailsComponent,
+    PaymentDetailFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,9 @@ import { NgbDateCustomParserFormatter } from './shared/NgbDateCustomParserFormat
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
